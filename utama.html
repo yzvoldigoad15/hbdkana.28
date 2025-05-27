@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday!</title>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+  <style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    font-family: 'Mochiy Pop One', cursive;
+    background: linear-gradient(to bottom right, #ffdde1, #c9e4f6);
+    color: #444;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 1rem;
+  }
+  h1 {
+    font-size: 2.2rem;
+    color: #ff69b4;
+    margin-bottom: 1rem;
+    text-align: center;
+    word-break: break-word;
+  }
+  .postcard-photo {
+    width: 90%;
+    max-width: 320px;
+    aspect-ratio: 4/3;
+    background: #fff0f5;
+    border: 4px dashed #ff99cc;
+    border-radius: 12px;
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  .postcard-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card-section {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+  }
+  .card-container {
+    width: 100%;
+    aspect-ratio: 3/2;
+    perspective: 1000px;
+    margin: 1rem 0;
+  }
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+  .card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    font-size: 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  .card-front {
+    background: #ffe6f2;
+    color: #c2185b;
+  }
+  .card-back {
+    background: #e0f7fa;
+    color: #006064;
+    transform: rotateY(180deg);
+    flex-direction: column;
+  }
+  .gallery-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.3rem;
+    padding-top: 0.5rem;
+  }
+  .gallery-images img {
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #ffb6c1;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 0.75rem auto;
+    display: block;
+  }
+  .btn:hover {
+    background-color: #ff6f91;
+  }
+  iframe {
+    margin-top: 1rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 320px;
+    height: 180px;
+  }
+  .love {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center center/contain;
+    animation: floatLove 5s linear infinite;
+    opacity: 0.8;
+  }
+  @keyframes floatLove {
+    0% {
+      transform: translateY(0) scale(0.8);
+      opacity: 0.8;
+    }
+    100% {
+      transform: translateY(-800px) scale(1.2);
+      opacity: 0;
+    }
+  }
+</style>
+
+</head>
+<body>
+  <h1>🎉 Happy Birthday, KAMUU! 🎉</h1>
+
+  <div class="postcard-photo">
+    <img src="foto-cewek.jpg" alt="Foto Kamu">
+  </div>
+
+  <div class="card-section">
+    <!-- Kenangan Flip -->
+    <div class="card-container card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">📸 whoop whoop, hii fineshyt</div>
+        <div class="card-back">
+          <div class="gallery-images">
+            <img src="img1.jpg">
+            <img src="img2.jpg">
+            <img src="img3.jpg">
+            <img src="img4.jpg">
+            <img src="img5.jpg">
+            <img src="img6.jpg">
+            <img src="img7.jpg">
+            <img src="img8.jpg">
+            <img src="img9.jpg">
+            <img src="img10.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Surat Flip -->
+    <div class="card-container card" onclick="this.classList.toggle('flipped')">
+      <div class="card-inner">
+        <div class="card-front">💌 Surat buat Kamu</div>
+        <div class="card-back">
+          Hai Kirann! eh mau panggil kana aja bole? mungkin belum lama kita kenal. Tapi aku ngerasa selalu ada hal kecil yang bikin hari aku jadi lebih seru n berwarna xixixi, semoga semua hal baik selalu nemuin kamu setiap harinya yaa.    Happy birthday ya! 🤭🥳
+        </div>
+      </div>
+    </div>
+
+  <!-- BACKSOUND AUDIO -->
+  <audio id="bg-music" autoplay loop>
+    <source src="ulangtahun.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung audio tag.
+  </audio>
+  <button class="btn" onclick="toggleMusic()">🔊 Musik: Play/Pause</button>
+
+  <!-- LOVE ANIMATION -->
+  <script>
+    const music = document.getElementById('bg-music');
+    function toggleMusic() {
+      if (music.paused) music.play();
+      else music.pause();
+    }
+
+    function createLove() {
+      const love = document.createElement('div');
+      love.classList.add('love');
+      love.style.left = Math.random() * window.innerWidth + 'px';
+      love.style.top = '100%';
+      document.body.appendChild(love);
+      setTimeout(() => love.remove(), 5000);
+    }
+    setInterval(createLove, 800);
+  </script>
+</body>
+</html>

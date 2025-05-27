@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+  <title>Teka-Teki Ulang Tahun 🎁</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Mochiy Pop One', cursive;
+      background: linear-gradient(to right, #ffd1dc, #d1eaff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      color: #ff69b4;
+      margin-bottom: 1rem;
+    }
+    .puzzle-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      max-width: 400px;
+    }
+    input[type="text"] {
+      padding: 0.5rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 80%;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-size: 1rem;
+    }
+    button {
+      background: #ff69b4;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background: #ff1493;
+    }
+    .message {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>well well well tebak dulu ini🤭</h1>
+  <div class="puzzle-box">
+    <p>Tebak kata rahasia: <br><strong>"gimana caranya "for real" bisa jadi "fr", "brother" bisa jadi "bro", dan "you" bisa jadi?</strong></p>
+    <input type="text" id="answer" placeholder="Tulis di sini...">
+    <br>
+    <button onclick="checkAnswer()">Cek Jawaban</button>
+    <p class="message" id="message"></p>
+  </div>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById('answer').value.trim().toLowerCase();
+      const correct = ["mine", "punyaku", "milikku", "pacar ak", ];
+      if (correct.includes(input)) {
+        document.getElementById('message').textContent = "🥳 yippiee";
+        setTimeout(() => {
+          window.location.href = "utama.html"; // Ganti sesuai nama file utama
+        }, 2000);
+      } else {
+        document.getElementById('message').textContent = "😝🤭 well well well salah";
+      }
+    }
+  </script>
+</body>
+</html>
